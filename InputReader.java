@@ -30,16 +30,24 @@ public class InputReader
      */
     public HashSet<String> getInput() 
     {
-        System.out.print("> ");                // print prompt
-        String inputLine = reader.nextLine().trim().toLowerCase();
-
-        String[] wordArray = inputLine.split(" ");  // split at spaces
-
-        // add words from array into hashset 
         HashSet<String> words = new HashSet<>();
-        for(String word : wordArray) {
-            words.add(word);
-        }
+        String inputLine;
+        do
+        {
+            System.out.print("> ");                // print prompt
+            inputLine = reader.nextLine().trim().toLowerCase();
+    
+            String[] wordArray = inputLine.split(" ");  // split at spaces
+        
+            // add words from array into hashset 
+
+            
+            for(String word : wordArray) {
+                words.add(word);
+            }
+        } while(!inputLine.isEmpty());
+
+        
         return words;
     }
 }
